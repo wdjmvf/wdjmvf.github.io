@@ -267,13 +267,28 @@ a:hover {
 .color-red{
 	color:#ff5c33;
 }
-
+#content-1{
+	cursor: crosshair;
+}
 canvas{
 	position: absolute;
 	display:block;
 	z-index: -1;	
 	height: 100%;
 }
+
+.ml13 {
+	font-size: 1.9em;
+	text-transform: uppercase;
+	/* letter-spacing: 0.5em; */
+	font-weight: 600;
+	color: #80f383;
+  }
+  
+  .ml13 .letter {
+	display: inline-block;
+	line-height: 1em;
+  }
 
 @media screen and (max-width: 40em) {
 	.bp-header {
