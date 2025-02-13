@@ -21,13 +21,17 @@
 
     <script>
         const button = document.getElementById('button-send');
-        
+        let count = 1
         button.addEventListener('click', () => {
             sendHearts();
         } )
         
         function sendHearts() {
-
+            let emoji = '💖';
+            if (count > 5) 
+            { emoji = '😉🤟🏻' 
+              count = 1
+            }
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.textContent = '💖';
@@ -38,6 +42,7 @@
 
             const heartContainer = document.getElementById('heartContainer');
             heartContainer.append(heart);
+            count++;
             
             setTimeout( () => {
                 heart.remove();
