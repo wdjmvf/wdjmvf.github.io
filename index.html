@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="card">
+        <h1>Happy Valentine's Day 💖</h1>
+        <p>คุณคือคนที่พิเศษที่สุดเลย มีคนส่งใจให้รึยัง 😊</p>
+        <p>ถ้ายังฉันส่งให้เอง 😘</p>
+        <button id="button-send">ส่งหัวใจ 💌</button>
+
+        <div id="heartContainer" class="hearts-container">
+            
+        </div>
+    </div>
+
+    <script>
+        const button = document.getElementById('button-send');
+        
+        button.addEventListener('click', () => {
+            sendHearts();
+        } )
+        
+        function sendHearts() {
+
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '💖';
+            const mathRandomValue = Math.random();
+            const positionLeft = mathRandomValue * 100;
+            heart.style.left = positionLeft + '%';
+            heart.style.bottom = 0;
+
+            const heartContainer = document.getElementById('heartContainer');
+            heartContainer.append(heart);
+            
+            setTimeout( () => {
+                heart.remove();
+            }, 4000 )
+        }
+        
+    </script>
+
+</body>
+</html>
